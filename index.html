@@ -1,0 +1,526 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Reconecta con tu Esencia · Cocorná</title><meta name="description" content="Guianza de bienestar en Cocorná: 2 días / 1 noche, máximo 10 personas."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><style>
+:root {
+  --tinta:#0F2E2C; --tinta2:#3F5F5B; --turq:#0E6E73; --turq2:#14918F; --menta:#DDF3EC; --menta2:#EEF9F5;
+  --sol:#E6B85C; --blanco:#FFFFFF; --borde:#CFE7DF; --sombra:0 10px 30px rgba(14,110,115,.12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Jost", "Segoe UI", sans-serif; color: var(--tinta); background: var(--menta2); line-height: 1.55; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+section { padding: 88px 0; position: relative; scroll-margin-top: 64px; }
+h1, h2, h3 { font-weight: 300; line-height: 1.1; letter-spacing: -.01em; }
+h2 { font-size: clamp(32px, 4.4vw, 52px); margin-bottom: 14px; }
+h2 em, h1 em { font-style: italic; font-weight: 500; color: var(--turq2); }
+.kick { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--turq2); font-weight: 600; margin-bottom: 10px; }
+.lead { font-size: 19px; color: var(--tinta2); max-width: 680px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 40px; padding: 13px 26px; font-size: 15px; font-weight: 500; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; transition: transform .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(-2px); box-shadow: var(--sombra); }
+.btn.pri { background: var(--turq); color: #fff; }
+.btn.sec { background: #fff; color: var(--turq); }
+.btn.lin { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.7); }
+.cred { position: absolute; left: 12px; bottom: 12px; font-size: 11px; background: rgba(15,46,44,.72); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: .02em; }
+.cred.ia { background: rgba(50,50,50,.65); }
+.ph { position: relative; overflow: hidden; border-radius: 22px; }
+.ph img { width: 100%; height: 100%; object-fit: cover; }
+
+/* nav */
+nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 40; transition: background .25s, box-shadow .25s; }
+nav.top.solid { background: rgba(255,255,255,.94); backdrop-filter: blur(8px); box-shadow: 0 2px 16px rgba(0,0,0,.06); }
+nav.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-weight: 600; font-size: 19px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo i { font-style: italic; font-weight: 400; }
+nav.top.solid .logo { color: var(--turq); }
+.links { display: flex; gap: 22px; align-items: center; }
+.links a { text-decoration: none; color: rgba(255,255,255,.92); font-size: 15px; }
+nav.top.solid .links a { color: var(--tinta2); }
+.links a.btn { color: #fff !important; padding: 9px 18px; }
+#menuBtn { display: none; background: none; border: 0; color: #fff; font-size: 26px; cursor: pointer; }
+nav.top.solid #menuBtn { color: var(--turq); }
+
+/* hero */
+.hero { min-height: 100vh; padding: 110px 0 70px; background: radial-gradient(120% 90% at 85% 40%, #2BA7A3 0%, #0E6E73 45%, #0A4F55 100%); color: #fff; overflow: hidden; display: flex; align-items: center; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+.hero h1 { font-size: clamp(44px, 6.4vw, 84px); }
+.hero h1 em { color: #BFF2E6; }
+.hero p.sub { font-size: 20px; margin: 22px 0 30px; color: rgba(255,255,255,.88); max-width: 520px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.chip { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); border-radius: 30px; padding: 7px 14px; font-size: 14px; }
+.hero .ph { aspect-ratio: 1 / 1.05; border-radius: 48% 52% 44% 56% / 52% 46% 54% 48%; box-shadow: 0 30px 60px rgba(0,0,0,.3); }
+.hero .ph .cred { left: 50%; transform: translateX(-50%); bottom: 26px; white-space: nowrap; }
+.ola { position: absolute; left: 0; bottom: -1px; width: 100%; height: 70px; }
+.hero { position: relative; }
+body { overflow-x: hidden; }
+
+/* stats */
+.stats { margin-top: -50px; position: relative; z-index: 3; }
+.stats .grid { display: grid; grid-template-columns: repeat(4, 1fr); background: #fff; border-radius: 22px; box-shadow: var(--sombra); padding: 26px 10px; }
+.stat { text-align: center; border-right: 1px solid var(--borde); padding: 4px 8px; }
+.stat:last-child { border-right: 0; }
+.stat b { display: block; font-size: 40px; font-weight: 300; color: var(--turq); line-height: 1; }
+.stat span { font-size: 14px; color: var(--tinta2); }
+
+/* para ti */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.sientes { display: grid; gap: 12px; margin: 24px 0; }
+.sientes div { background: #fff; border-radius: 14px; padding: 14px 18px; border-left: 4px solid var(--turq2); font-size: 16.5px; }
+.nota { background: var(--menta); border-radius: 16px; padding: 18px 20px; font-size: 15.5px; }
+
+/* experiencias */
+.bg-blanco { background: #fff; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
+.card { background: var(--menta2); border-radius: 22px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+.card .ph { border-radius: 0; height: 200px; }
+.card .tx { padding: 18px 20px 22px; }
+.card h3 { font-size: 22px; font-weight: 500; margin-bottom: 6px; }
+.card p { font-size: 15px; color: var(--tinta2); }
+.no { margin-top: 26px; font-size: 15px; color: var(--tinta2); text-align: center; }
+
+/* cocorna */
+.cocorna { background: linear-gradient(180deg, var(--menta2), var(--menta)); }
+.mosaico { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 220px 220px; gap: 14px; }
+.mosaico .ph:first-child { grid-row: span 2; }
+.datos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+.dato { background: #fff; border-radius: 14px; padding: 12px 16px; }
+.dato b { color: var(--turq); font-weight: 600; display: block; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+.dato span { font-size: 15px; }
+
+/* cronograma */
+.tabs { display: inline-flex; background: var(--menta); border-radius: 40px; padding: 5px; margin: 26px 0 30px; }
+.tabs button { border: 0; background: transparent; padding: 11px 26px; border-radius: 40px; font-family: inherit; font-size: 16px; cursor: pointer; color: var(--tinta2); }
+.tabs button.on { background: var(--turq); color: #fff; }
+.dia { display: none; } .dia.on { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: start; }
+.tl { position: relative; }
+.tl:before { content: ""; position: absolute; left: 74px; top: 8px; bottom: 8px; width: 2px; background: var(--borde); }
+.paso { display: grid; grid-template-columns: 60px 1fr; gap: 30px; padding: 10px 12px; border-radius: 14px; cursor: pointer; position: relative; transition: background .2s; }
+.paso:hover, .paso.on { background: var(--menta2); }
+.paso .h { font-weight: 600; color: var(--turq); font-size: 16px; padding-top: 1px; }
+.paso:after { content: ""; position: absolute; left: 69px; top: 17px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2.5px solid var(--turq2); }
+.paso.on:after { background: var(--sol); border-color: var(--sol); }
+.paso h4 { font-size: 18px; font-weight: 500; }
+.paso p { font-size: 15px; color: var(--tinta2); }
+.visor { position: sticky; top: 90px; }
+.visor .ph { aspect-ratio: 4 / 3.3; background: var(--menta); }
+.visor .ph img { transition: opacity .3s; }
+.visor .cap { margin-top: 12px; font-size: 15px; color: var(--tinta2); }
+.incluye { margin-top: 18px; background: var(--menta2); border-radius: 16px; padding: 16px 18px; font-size: 14.5px; }
+
+/* anfitriones */
+.anf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 34px; }
+.anf div.c { background: #fff; border-radius: 20px; padding: 22px; border-top: 4px solid var(--turq2); }
+.anf h4 { font-size: 19px; font-weight: 500; margin-bottom: 6px; }
+.anf p { font-size: 14.5px; color: var(--tinta2); }
+.anf img.logo-n { width: 70px; height: 70px; object-fit: contain; margin-bottom: 8px; }
+
+/* llevar */
+.pin { position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--sol); border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.35); transform: translate(-50%, -50%); cursor: pointer; padding: 0; z-index: 2; transition: transform .15s; }
+.pin:hover, .pin.on { transform: translate(-50%, -50%) scale(1.25); background: var(--turq); }
+.pin:focus-visible { outline: 3px solid var(--turq); outline-offset: 2px; }
+.pin-tip { position: absolute; z-index: 3; transform: translate(-50%, calc(-100% - 16px)); background: var(--tinta); color: #fff; font-size: 13.5px; padding: 6px 12px; border-radius: 10px; white-space: nowrap; pointer-events: none; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+.pista { font-size: 13.5px; color: var(--tinta2); margin-top: 8px; }
+.llevar { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 26px; }
+.grupo { background: #fff; border-radius: 18px; padding: 18px 20px; }
+.grupo h4 { font-size: 17px; font-weight: 600; color: var(--turq); margin-bottom: 8px; }
+.grupo label { display: flex; gap: 10px; align-items: center; font-size: 15.5px; padding: 5px 0; cursor: pointer; }
+.grupo input { width: 19px; height: 19px; accent-color: var(--turq); }
+.grupo label.ok span { text-decoration: line-through; color: #8AA5A0; }
+.barra { height: 10px; background: var(--menta); border-radius: 10px; overflow: hidden; margin-top: 8px; }
+.barra div { height: 100%; width: 0; background: linear-gradient(90deg, var(--turq2), var(--sol)); transition: width .3s; }
+.guia-lleva { margin-top: 26px; background: var(--turq); color: #fff; border-radius: 20px; padding: 22px 24px; }
+.guia-lleva h4 { font-size: 19px; font-weight: 500; margin-bottom: 8px; }
+.guia-lleva p { font-size: 15px; color: rgba(255,255,255,.88); }
+
+/* seguridad */
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
+.seg div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 18px; padding: 18px 20px; }
+.seg img { width: 62px; height: 62px; object-fit: contain; margin-bottom: 10px; background: var(--menta); border-radius: 50%; padding: 6px; }
+.seg h4 { font-size: 18px; font-weight: 500; margin-bottom: 4px; }
+.seg p { font-size: 14.5px; color: rgba(255,255,255,.82); }
+.oscuro { background: #0A4F55; color: #fff; }
+.oscuro h2 em { color: #BFF2E6; } .oscuro .kick { color: var(--sol); } .oscuro .lead { color: rgba(255,255,255,.85); }
+.red { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+.momentos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+.momento { background: #fff; border-radius: 22px; padding: 24px 24px 20px; position: relative; }
+.momento h3 { font-size: 22px; font-weight: 500; margin: 6px 0 12px; color: var(--turq); }
+.momento ul { list-style: none; display: grid; gap: 9px; }
+.momento li { font-size: 15px; padding-left: 22px; position: relative; color: var(--tinta2); }
+.momento li:before { content: ""; position: absolute; left: 2px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--sol); }
+.paso-n { display: inline-flex; width: 34px; height: 34px; border-radius: 50%; background: var(--turq); color: #fff; align-items: center; justify-content: center; font-weight: 600; }
+.rastro { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.rastro span { background: #fff; border: 1px solid var(--borde); border-radius: 30px; padding: 8px 16px; font-size: 14.5px; color: var(--tinta2); }
+.rastro b { color: var(--turq); font-weight: 600; }
+@media (max-width: 900px) { .momentos { grid-template-columns: 1fr; } }
+.acuerdos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.acuerdos span { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 14px; padding: 12px 14px 12px 40px; font-size: 15px; position: relative; }
+.acuerdos span:before { content: "✓"; position: absolute; left: 14px; top: 11px; color: var(--sol); font-weight: 600; }
+@media (max-width: 900px) { .acuerdos { grid-template-columns: 1fr; } }
+.red span { background: #fff; color: var(--tinta); border-radius: 30px; padding: 8px 16px; font-size: 14.5px; }
+.red span b { color: var(--turq); }
+
+/* guia */
+.guia .ph { aspect-ratio: 4 / 4.6; }
+.guia blockquote { font-size: 22px; font-style: italic; color: var(--turq); margin: 18px 0; border-left: 3px solid var(--sol); padding-left: 18px; }
+.guia p { margin-bottom: 12px; font-size: 16.5px; color: var(--tinta2); }
+
+/* condiciones */
+.precio { background: linear-gradient(140deg, var(--turq) 0%, #0A4F55 100%); color: #fff; border-radius: 26px; padding: 30px; position: sticky; top: 90px; }
+.precio .v { font-size: 52px; font-weight: 300; line-height: 1; margin: 8px 0 4px; }
+.precio ul { list-style: none; margin: 18px 0; }
+.precio li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.15); font-size: 15px; }
+.precio li:before { content: "✓  "; color: var(--sol); font-weight: 600; }
+.precio small { color: rgba(255,255,255,.75); font-size: 13px; display: block; }
+.acc { border-bottom: 1px solid var(--borde); }
+.acc button { width: 100%; text-align: left; background: none; border: 0; font-family: inherit; font-size: 18px; padding: 18px 40px 18px 0; cursor: pointer; color: var(--tinta); position: relative; }
+.acc button:after { content: "+"; position: absolute; right: 6px; top: 12px; font-size: 26px; color: var(--turq2); transition: transform .2s; }
+.acc.on button:after { transform: rotate(45deg); }
+.acc .cuerpo { max-height: 0; overflow: hidden; transition: max-height .3s; }
+.acc .cuerpo p { padding: 0 0 18px; font-size: 15.5px; color: var(--tinta2); }
+.acc.on .cuerpo { max-height: 260px; }
+
+/* reserva y opinion */
+.form { background: #fff; border-radius: 24px; padding: 28px; box-shadow: var(--sombra); }
+.form label { display: block; font-size: 14px; color: var(--tinta2); margin: 12px 0 5px; }
+.form input, .form select, .form textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--borde); border-radius: 12px; font-family: inherit; font-size: 15.5px; background: var(--menta2); }
+.form .chk { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; margin-top: 14px; }
+.msg { display: none; margin-top: 16px; background: var(--menta); border-radius: 12px; padding: 14px 16px; font-size: 15px; }
+.estrellas { display: flex; gap: 6px; font-size: 30px; cursor: pointer; color: #C9DDD7; user-select: none; }
+.estrellas span.on { color: var(--sol); }
+.preg { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--borde); gap: 16px; font-size: 16px; }
+
+footer { background: #082F33; color: rgba(255,255,255,.8); padding: 60px 0 30px; font-size: 14.5px; }
+footer h4 { color: #fff; font-weight: 500; font-size: 18px; margin-bottom: 10px; }
+footer .cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+footer ol { padding-left: 18px; } footer li { margin-bottom: 6px; font-size: 13.5px; }
+footer .base { margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.15); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer a { color: var(--sol); }
+
+/* modo profesor */
+.rub { display: none; position: absolute; top: 18px; right: 24px; background: var(--sol); color: var(--tinta); font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 20px; z-index: 5; box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+body.prof .rub { display: inline-block; }
+body.prof section { outline: 2px dashed rgba(230,184,92,.55); outline-offset: -10px; }
+#profBtn { position: fixed; right: 18px; bottom: 18px; z-index: 50; background: var(--sol); color: var(--tinta); border: 0; border-radius: 40px; padding: 12px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+#panel { position: fixed; right: 18px; bottom: 76px; z-index: 50; width: 320px; max-height: 70vh; overflow: auto; background: #fff; border-radius: 18px; box-shadow: 0 16px 40px rgba(0,0,0,.25); padding: 18px; display: none; }
+body.prof #panel { display: block; }
+#panel h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+#panel p { font-size: 13px; color: var(--tinta2); margin-bottom: 10px; }
+#panel a { display: flex; gap: 10px; text-decoration: none; padding: 7px 8px; border-radius: 10px; font-size: 14px; }
+#panel a:hover { background: var(--menta2); }
+#panel a b { background: var(--turq); color: #fff; border-radius: 50%; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex: none; }
+#panel .doc { display: block; margin-top: 10px; background: var(--menta); text-align: center; font-weight: 500; }
+
+.rev { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+.rev.vis { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  section { padding: 64px 0; }
+  .links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 16px; gap: 14px; box-shadow: 0 10px 20px rgba(0,0,0,.08); }
+  .links.abierto { display: flex; } .links a { color: var(--tinta2) !important; }
+  #menuBtn { display: block; }
+  .hero .wrap, .split, .dia.on { grid-template-columns: 1fr; }
+  .hero .ph { max-width: 420px; margin: 0 auto; }
+  .stats .grid { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .stat:nth-child(2) { border-right: 0; }
+  .cards, .anf, .seg { grid-template-columns: 1fr 1fr; }
+  .visor { position: static; order: -1; }
+  .precio { position: static; }
+  footer .cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  .cards, .anf, .seg, .llevar, .datos { grid-template-columns: 1fr; }
+  .mosaico { grid-template-columns: 1fr; grid-template-rows: 220px 160px 160px; }
+  .mosaico .ph:first-child { grid-row: auto; }
+  .tl:before, .paso:after { display: none; }
+  .paso { grid-template-columns: 52px 1fr; gap: 12px; }
+  .rub { right: 16px; top: 10px; }
+  #panel { left: 16px; right: 16px; width: auto; }
+  #profBtn { padding: 9px 13px; font-size: 13px; right: 12px; bottom: 12px; opacity: .92; }
+}
+@media (prefers-reduced-motion: reduce) { .rev { opacity: 1; transform: none; } html { scroll-behavior: auto; } }
+</style></head><body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="#inicio">◐ Reconecta <i>con tu Esencia</i></a>
+  <button id="menuBtn" aria-label="Menú">☰</button>
+  <div class="links">
+    <a href="#experiencia">Experiencia</a><a href="#cocorna">Cocorná</a><a href="#cronograma">Cronograma</a>
+    <a href="#llevar">Qué llevar</a><a href="#condiciones">Condiciones</a><a class="btn pri" href="#reserva-sec">Reservar cupo</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="wrap">
+  <div class="rev">
+    <div class="kick" style="color:#BFF2E6;">Guianza de bienestar · Cocorná, Antioquia</div>
+    <h1>Fluye como el <em>río</em>,<br>vuelve a <em>ti</em>.</h1>
+    <p class="sub">Dos días entre montaña, agua clara y comida local para parar, descansar y volver a tu esencia. Sin prisa, sin pantallas, con un guía que te cuida.</p>
+    <a class="btn sec" href="#cronograma">Ver cronograma</a>&nbsp;
+    <a class="btn lin" href="#reserva-sec">Reservar cupo</a>
+    <div class="chips"><span class="chip">2 días / 1 noche</span><span class="chip">Máximo 10 personas</span><span class="chip">Nivel físico bajo</span><span class="chip">Guía certificado SENA</span></div>
+  </div>
+  <div class="ph rev"><img src="img/img-09-cascada.jpg" alt="Cascada y poza de agua turquesa en el bosque"><span class="cred ia">Imagen ilustrativa · IA · cascada de referencia</span></div>
+</div>
+<svg class="ola" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 40 C 240 80 480 0 720 30 C 960 60 1200 10 1440 40 L1440 70 L0 70 Z" fill="#EEF9F5"/></svg>
+</header>
+
+<div class="stats"><div class="wrap"><div class="grid rev">
+  <div class="stat"><b>2</b><span>días · 1 noche</span></div>
+  <div class="stat"><b>10</b><span>personas máximo</span></div>
+  <div class="stat"><b>23 °C</b><span>clima promedio</span></div>
+  <div class="stat"><b>3</b><span>anfitriones locales</span></div>
+</div></div></div>
+
+<section id="para-ti"><span class="rub" data-rub="8">Rúbrica 8 · Perfil del cliente</span><div class="wrap split">
+  <div class="rev">
+    <div class="kick">¿Es para ti?</div>
+    <h2>Si tu cuerpo te pide <em>una pausa</em>…</h2>
+    <div class="sientes">
+      <div>Sientes cansancio de pantallas, tráfico y pendientes.</div>
+      <div>Te cuesta dormir o desconectarte del trabajo.</div>
+      <div>Te gusta el yoga, la naturaleza y la comida sana.</div>
+      <div>Buscas un grupo pequeño, tranquilo y seguro.</div>
+    </div>
+    <div class="nota"><b>También es accesible.</b> Si eres adulto mayor o tienes movilidad reducida, adaptamos el ritmo: pausas a la sombra, río opcional desde la orilla y senderos para los sentidos (olfato, oído y tacto).</div>
+  </div>
+  <div class="ph rev" style="aspect-ratio:4/3.4;"><img src="img/img-15-meditacion.jpg" alt="Persona meditando junto al río"><span class="cred ia">Imagen ilustrativa · IA · meditación junto al río</span></div>
+</div></section>
+
+<section id="experiencia" class="bg-blanco"><span class="rub" data-rub="3">Rúbrica 3 · Actividades y experiencias</span><div class="wrap">
+  <div class="kick">La experiencia</div>
+  <h2>Agua, tierra, aire y <em>alimento</em></h2>
+  <p class="lead">Un recorrido que va del movimiento suave a la quietud. Cada actividad es voluntaria y se adapta a ti.</p>
+  <div class="cards"><div class="card rev"><div class="ph"><img src="img/img-10-hidroterapia.jpg" alt="Hidroterapia consciente"><span class="cred ia">Imagen ilustrativa · IA · referencia</span></div><div class="tx"><h3>Hidroterapia consciente</h3><p>Inmersión en pozas autorizadas, con aforo y tiempo limitado, para soltar tensiones.</p></div></div><div class="card rev"><div class="ph"><img src="img/f19_circulo.jpg" alt="Yoga y meditación"><span class="cred">Foto de campo · Cocorná</span></div><div class="tx"><h3>Yoga y meditación</h3><p>Práctica suave, respiración y paisaje sonoro. Tú decides hasta dónde llegar.</p></div></div><div class="card rev"><div class="ph"><img src="img/img-17-preparate.jpg" alt="Caminata consciente"><span class="cred ia">Imagen ilustrativa · IA · referencia</span></div><div class="tx"><h3>Caminata consciente</h3><p>Senderos de bajo impacto, en silencio y sin dejar rastro.</p></div></div><div class="card rev"><div class="ph"><img src="img/f08.jpg" alt="Alimentación consciente"><span class="cred">Foto de campo · Cocorná</span></div><div class="tx"><h3>Alimentación consciente</h3><p>Desayuno y almuerzo de cocina local en la finca Proyecto Jagua.</p></div></div><div class="card rev"><div class="ph"><img src="img/img-16-museo.jpg" alt="Memoria del territorio"><span class="cred ia">Imagen ilustrativa · IA · referencia</span></div><div class="tx"><h3>Memoria del territorio</h3><p>Museo Indígena y café literario: la historia real de Cocorná.</p></div></div><div class="card rev"><div class="ph"><img src="img/f18_tambor.jpg" alt="Masaje y sonido" style="object-position:50% 15%;"><span class="cred">Foto de campo · Cocorná</span></div><div class="tx"><h3>Masaje y sonido</h3><p>Masaje relajante con aceites y música en vivo para cerrar el día.</p></div></div></div>
+  <p class="no">Esto <b>no</b> es turismo de aventura: no hay rafting, rappel ni torrentismo. Tampoco prometemos curas: es bienestar guiado y seguro.</p>
+</div></section>
+
+<section id="cocorna" class="cocorna"><span class="rub" data-rub="2">Rúbrica 2 · Descripción del territorio</span><div class="wrap split">
+  <div class="mosaico rev">
+    <div class="ph"><img src="img/f14_rio.jpg" alt="Río Cocorná"><span class="cred">Foto de campo · río Cocorná</span></div>
+    <div class="ph"><img src="img/f16_aerea.jpg" alt="Vista aérea del pueblo"><span class="cred">Foto de campo · cabecera</span></div>
+    <div class="ph"><img src="img/f01.jpg" alt="Casa campesina"><span class="cred">Foto de campo · casa campesina</span></div>
+  </div>
+  <div class="rev">
+    <div class="kick">El lugar</div>
+    <h2>Cocorná, <em>santuario de agua</em></h2>
+    <p class="lead">En el Oriente antioqueño, entre 450 y 2.350 metros de altura, Cocorná es un valle de ríos transparentes, cascadas y bosque húmedo. Fue tierra de los pueblos Tahamí y Pantágora y hoy es un municipio que eligió la paz y el turismo rural.</p>
+    <div class="datos">
+      <div class="dato"><b>Clima</b><span>Templado, cerca de 23 °C. Llueve con frecuencia: trae impermeable.</span></div>
+      <div class="dato"><b>Agua</b><span>Ríos Cocorná, Melcocho y Santo Domingo, quebradas y cascadas.</span></div>
+      <div class="dato"><b>Sabores</b><span>Panela, cacao, café y cocina campesina.</span></div>
+      <div class="dato"><b>Cultura</b><span>Fiestas de la Panela, festival del chocolate y la trova.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="cronograma" class="bg-blanco"><span class="rub" data-rub="7">Rúbrica 7 · Itinerario y recomendaciones</span><div class="wrap">
+  <div class="kick">Cronograma</div>
+  <h2>Así se viven <em>los dos días</em></h2>
+  <p class="lead">Toca cada momento para verlo. Punto de encuentro: parque principal de Cocorná, 3:00 p. m. del Día 1.</p>
+  <div class="tabs"><button class="on" data-dia="d1">Día 1 · Llegar y soltar</button><button data-dia="d2">Día 2 · Río y memoria</button></div>
+  <div class="dia on" id="d1">
+    <div class="tl"><div class="paso on"><div class="h">15:00</div><div><h4>Bienvenida en el parque principal</h4><p>Conoces al grupo y a tu guía, recibes tu kit y una charla corta de seguridad.</p></div></div><div class="paso" data-img="img/img-13-posada.jpg"><div class="h">16:00</div><div><h4>Llegada a la posada rural</h4><p>Te instalas en tu habitación con vista a la montaña y das un paseo de reconocimiento.</p></div></div><div class="paso"><div class="h">18:00</div><div><h4>Meditación de llegada</h4><p>Respiración suave y paisaje sonoro mientras cae la tarde.</p></div></div><div class="paso"><div class="h">19:00</div><div><h4>Cena ligera</h4><p>Comida local y una charla breve sobre lo que viviremos mañana.</p></div></div><div class="paso"><div class="h">20:30</div><div><h4>Descanso</h4><p>Noche sin pantallas: dormir también es parte del viaje.</p></div></div></div>
+    <div class="visor"><div class="ph"><img src="img/img-13-posada.jpg" alt="Momento del cronograma"><span class="cred ia">Imagen ilustrativa · IA · referencia del lugar</span></div>
+      <p class="cap">15:00 · Bienvenida en el parque principal</p>
+      <div class="incluye"><b>Incluido:</b> posada, cena, kit de bienvenida, guía y seguro de asistencia.</div></div>
+  </div>
+  <div class="dia" id="d2">
+    <div class="tl"><div class="paso on"><div class="h">07:00</div><div><h4>Camino a la finca Proyecto Jagua</h4><p>Traslado corto entre veredas.</p></div></div><div class="paso" data-img="img/img-11-mesa-jagua.jpg"><div class="h">07:30</div><div><h4>Desayuno consciente</h4><p>Frutas, bebidas y sabores de la región, preparados con calma.</p></div></div><div class="paso"><div class="h">08:30</div><div><h4>Charla de autocuidado</h4><p>Hábitos sencillos de bienestar inspirados en el Ayurveda.</p></div></div><div class="paso" data-img="img/img-15-meditacion.jpg"><div class="h">09:30</div><div><h4>Meditación guiada</h4><p>Silencio, respiración y escucha del bosque.</p></div></div><div class="paso" data-img="img/img-10-hidroterapia.jpg"><div class="h">10:15</div><div><h4>Hidroterapia en el río</h4><p>Inmersión consciente en una poza autorizada, con aforo y acompañamiento.</p></div></div><div class="paso"><div class="h">12:00</div><div><h4>Almuerzo de cocina local</h4><p>Platos frescos de la finca.</p></div></div><div class="paso"><div class="h">13:30</div><div><h4>Siesta y hamaca</h4><p>Tiempo libre para descansar de verdad.</p></div></div><div class="paso"><div class="h">14:30</div><div><h4>Alimentación y territorio</h4><p>Conversación sobre lo que comemos y de dónde viene.</p></div></div><div class="paso" data-img="img/img-16-museo.jpg"><div class="h">16:00</div><div><h4>Museo Indígena</h4><p>La historia de los pueblos Tahamí y Pantágora que habitaron este valle.</p></div></div><div class="paso" data-img="img/img-12-cafe-libros.jpg"><div class="h">17:00</div><div><h4>Café literario con Nanci</h4><p>Café, chocolate, libros y memoria del territorio en Casa Aquí Me Quedo.</p></div></div><div class="paso"><div class="h">18:30</div><div><h4>Cierre y despedida</h4><p>Círculo de palabra y tu opinión sobre la experiencia.</p></div></div></div>
+    <div class="visor"><div class="ph"><img src="img/img-11-mesa-jagua.jpg" alt="Momento del cronograma"><span class="cred ia">Imagen ilustrativa · IA · referencia del lugar</span></div>
+      <p class="cap">07:00 · Camino a la finca Proyecto Jagua</p>
+      <div class="incluye"><b>Incluido:</b> traslados locales, desayuno, almuerzo, entrada al museo y café con Nanci. Regreso al punto de encuentro a las 7:00 p. m.</div></div>
+  </div>
+</div></section>
+
+<section id="anfitriones"><span class="rub" data-rub="3">Rúbrica 3 · Prestadores del servicio</span><div class="wrap">
+  <div class="kick">Anfitriones locales</div>
+  <h2>Tu visita <em>se queda</em> en Cocorná</h2>
+  <p class="lead">Trabajamos con personas del territorio. Lo que pagas sostiene sus proyectos.</p>
+  <div class="anf">
+    <div class="c rev"><h4>Proyecto Jagua</h4><p>Finca de María Cata Amaya: alimentación consciente, plantas de la región y autocuidado.</p></div>
+    <div class="c rev"><img class="logo-n" src="img/casa_aqui_me_quedo_logo.png" alt="Logo Casa Aquí Me Quedo"><h4>Casa Aquí Me Quedo</h4><p>El café de Nanci, «donde acaba el afán»: libros, chocolate, arte y memoria.</p></div>
+    <div class="c rev"><h4>Posada rural</h4><p>Palmonte Posada Rural: descanso, senderos y avistamiento de aves.</p></div>
+    <div class="c rev"><h4>Museo Indígena</h4><p>La historia Tahamí y Pantágora contada desde la cabecera municipal.</p></div>
+  </div>
+</div></section>
+
+<section id="llevar" class="bg-blanco"><span class="rub" data-rub="4">Rúbrica 4 · Equipos, indumentaria y recursos</span><div class="wrap split" style="align-items:start;">
+  <div class="rev">
+    <div class="kick">Prepárate</div>
+    <h2>Qué llevar en <em>tu mochila</em></h2>
+    <p class="lead">Marca lo que ya empacaste. Tu lista se guarda en este navegador.</p>
+    <div style="display:flex;justify-content:space-between;margin-top:18px;font-size:15px;"><span>Tu progreso</span><span id="cuenta"></span></div>
+    <div class="barra"><div></div></div>
+    <div class="llevar"><div class="grupo"><h4>Para yoga y meditación</h4><label><input type="checkbox"><span>Tapete (mat) de yoga</span></label><label><input type="checkbox"><span>Ropa ligera y elástica para la práctica</span></label><label><input type="checkbox"><span>Un abrigo liviano para la meditación al atardecer</span></label></div><div class="grupo"><h4>Para caminar</h4><label><input type="checkbox"><span>Ropa ligera: pantalón largo y camiseta de manga larga</span></label><label><input type="checkbox"><span>Zapatos cerrados con buen agarre</span></label><label><input type="checkbox"><span>Impermeable o poncho</span></label><label><input type="checkbox"><span>Gorra o sombrero</span></label></div><div class="grupo"><h4>Para el río</h4><label><input type="checkbox"><span>Vestido de baño o ropa para entrar al río</span></label><label><input type="checkbox"><span>Toalla de secado rápido</span></label><label><input type="checkbox"><span>Sandalias de río que se ajusten al pie</span></label><label><input type="checkbox"><span>Una muda de ropa seca</span></label></div><div class="grupo"><h4>Cuidado personal</h4><label><input type="checkbox"><span>Repelente para mosquitos</span></label><label><input type="checkbox"><span>Protector solar biodegradable</span></label><label><input type="checkbox"><span>Botella reutilizable para agua</span></label><label><input type="checkbox"><span>Medicamentos personales y documento de identidad</span></label></div></div>
+  </div>
+  <div class="rev">
+    <div class="ph" style="aspect-ratio:16/9;"><img src="img/img-19-lista-viaje.jpg" alt="Lo que lleva el viajero: tapete de yoga, ropa ligera, impermeable, sombrero, vestido de baño, toalla, sandalias de río, zapatos, mochila, repelente, protector solar y botella"><button class="pin" style="left:8%;top:42%;" data-tip="Tapete (mat) de yoga" aria-label="Tapete (mat) de yoga"></button><button class="pin" style="left:24%;top:20%;" data-tip="Camiseta ligera para yoga" aria-label="Camiseta ligera para yoga"></button><button class="pin" style="left:21%;top:58%;" data-tip="Leggings o ropa elástica para yoga" aria-label="Leggings o ropa elástica para yoga"></button><button class="pin" style="left:40%;top:24%;" data-tip="Pantalón largo ligero para caminar" aria-label="Pantalón largo ligero para caminar"></button><button class="pin" style="left:55%;top:24%;" data-tip="Camisa de manga larga" aria-label="Camisa de manga larga"></button><button class="pin" style="left:72%;top:25%;" data-tip="Impermeable o poncho" aria-label="Impermeable o poncho"></button><button class="pin" style="left:89%;top:22%;" data-tip="Sombrero para el sol" aria-label="Sombrero para el sol"></button><button class="pin" style="left:35%;top:68%;" data-tip="Vestido de baño para el río" aria-label="Vestido de baño para el río"></button><button class="pin" style="left:50%;top:57%;" data-tip="Toalla de secado rápido" aria-label="Toalla de secado rápido"></button><button class="pin" style="left:63%;top:53%;" data-tip="Sandalias de río" aria-label="Sandalias de río"></button><button class="pin" style="left:78%;top:52%;" data-tip="Zapatos cerrados con buen agarre" aria-label="Zapatos cerrados con buen agarre"></button><button class="pin" style="left:90%;top:63%;" data-tip="Mochila pequeña" aria-label="Mochila pequeña"></button><button class="pin" style="left:51%;top:83%;" data-tip="Repelente para mosquitos" aria-label="Repelente para mosquitos"></button><button class="pin" style="left:57%;top:83%;" data-tip="Protector solar biodegradable" aria-label="Protector solar biodegradable"></button><button class="pin" style="left:67%;top:82%;" data-tip="Botella reutilizable" aria-label="Botella reutilizable"></button><span class="cred ia">Imagen ilustrativa · IA · lo que lleva el viajero</span></div>
+    <p class="pista">Toca cada punto para ver qué es.</p>
+  </div>
+</div></section>
+
+<section id="momentos" class="cocorna"><span class="rub" data-rub="7">Rúbrica 7 · Recomendaciones por momentos</span><div class="wrap">
+  <div class="kick">Tu viaje en tres momentos</div>
+  <h2>Antes, durante y <em>después</em></h2>
+  <p class="lead">Lo que te pedimos en cada etapa para que el viaje sea seguro y deje huella buena en Cocorná.</p>
+  <div class="momentos"><div class="momento rev"><span class="paso-n">1</span><h3>Antes del viaje</h3><ul><li>Inscribirse y diligenciar la declaración de salud, alergias y movilidad.</li><li>Leer y firmar el contrato; si viaja un menor de edad, enviar la autorización escrita del acudiente.</li><li>Revisar el pronóstico del tiempo (IDEAM) y la lista de qué llevar.</li><li>Tener a mano documento de identidad y el carné de salud (EPS o seguro).</li><li>Llegar 15 minutos antes al punto de encuentro.</li></ul></div><div class="momento rev"><span class="paso-n">2</span><h3>Durante el recorrido</h3><ul><li>Seguir las indicaciones del guía; entrar al río solo cuando él lo indique y nunca solo.</li><li>Mantenerse con el grupo en senderos y traslados.</li><li>Guardar silencio respetuoso en el museo y en los espacios de memoria.</li><li>No consumir alcohol ni sustancias; respetar el espacio de cada persona.</li><li>Cero tolerancia a la explotación sexual comercial de niñas, niños y adolescentes (Ley 1336 de 2009).</li></ul></div><div class="momento rev"><span class="paso-n">3</span><h3>Después del recorrido</h3><ul><li>Responder la encuesta de evaluación.</li><li>Compartir fotos solo con el permiso de las personas que aparecen.</li><li>Enviar sugerencias, quejas o felicitaciones por el grupo de WhatsApp.</li><li>Recomendar y volver a los anfitriones locales: así el turismo deja beneficio en Cocorná.</li></ul></div></div>
+  <h3 style="font-size:22px;margin-top:40px;">No dejes rastro</h3>
+  <div class="rastro"><span title="inscripción, declaración de salud y lista de qué llevar."><b>Planifica y prepárate</b> · inscripción, declaración de salud y lista de qué llevar.</span><span title="solo senderos y puntos de entrada al río definidos."><b>Transita por superficies resistentes</b> · solo senderos y puntos de entrada al río definidos.</span><span title="todo residuo regresa con el grupo."><b>Dispón adecuadamente de los residuos</b> · todo residuo regresa con el grupo.</span><span title="no se extraen plantas, piedras ni objetos."><b>Deja lo que encuentras</b> · no se extraen plantas, piedras ni objetos.</span><span title="no se hacen fogatas en el recorrido."><b>Minimiza el impacto del fuego</b> · no se hacen fogatas en el recorrido.</span><span title="observar aves y flora a distancia, sin tocar ni alimentar."><b>Respeta la vida silvestre</b> · observar aves y flora a distancia, sin tocar ni alimentar.</span><span title="silencio, grupo pequeño y respeto por los habitantes."><b>Sé considerado con otros visitantes</b> · silencio, grupo pequeño y respeto por los habitantes.</span></div>
+</div></section>
+
+<section id="seguridad" class="oscuro"><span class="rub" data-rub="5 y 6">Rúbrica 5 y 6 · Circunstancias y grupos de apoyo</span><div class="wrap">
+  <div class="kick">Tu seguridad</div>
+  <h2>Cómo <em>te cuidamos</em></h2>
+  <p class="lead">Anticipamos lo que puede pasar en el río y la montaña para que tú solo te ocupes de descansar.</p>
+  <div class="seg"><div class="rev"><img src="img/ico-01-creciente.png" alt=""><h4>Río solo con aforo</h4><p>Revisamos el pronóstico del IDEAM y las alertas de creciente antes de salir. Si hay riesgo, no entramos al agua.</p></div><div class="rev"><img src="img/ico-02-roca-mojada.png" alt=""><h4>Pasos seguros</h4><p>Entramos al agua de a uno, acompañados, y te damos indicaciones de marcha.</p></div><div class="rev"><img src="img/ico-03-mordedura.png" alt=""><h4>Senderos limpios</h4><p>Caminamos por rutas conocidas y llevamos repelente y botiquín.</p></div><div class="rev"><img src="img/ico-04-frio.png" alt=""><h4>Calor después del río</h4><p>Tiempo de inmersión limitado, ropa seca, manta térmica y bebida caliente.</p></div><div class="rev"><img src="img/ico-05-estres.png" alt=""><h4>Acompañamiento emocional</h4><p>Nadie está obligado. Si algo te abruma, pausamos y respiramos juntos.</p></div><div class="rev"><div style="font-size:40px;line-height:54px;margin-bottom:8px;">☂</div><h4>Plan B siempre listo</h4><p>Si llueve fuerte o falla un traslado, tenemos espacio bajo techo y transporte de respaldo.</p></div></div>
+  <h3 style="font-size:22px;margin-top:34px;">Acuerdos del grupo</h3>
+  <div class="acuerdos">
+    <span>Contamos al grupo al salir y al llegar de cada traslado</span>
+    <span>Un solo punto de entrada y salida al río</span>
+    <span>Máximo 10 personas por salida y turnos de 5 en el río</span>
+    <span>Nunca entras solo al agua</span>
+    <span>Silencio respetuoso en el museo y en los espacios de memoria</span>
+    <span>No tocamos fauna ni arrancamos plantas</span>
+    <span>Tus residuos regresan contigo</span>
+  </div>
+  <h3 style="font-size:22px;margin-top:30px;">Red de apoyo en Cocorná</h3>
+  <div class="red" style="margin-top:14px;">
+    <span><b>Hospital San Juan de Dios</b> · (604) 834 3403</span>
+    <span><b>Bomberos</b> · 311 707 4303</span>
+    <span><b>Policía</b> · (604) 834 3040</span>
+    <span><b>Gestión del riesgo (CMGRD)</b> · 300 919 8945</span>
+    <span><b>Emergencias</b> · 123</span>
+  </div>
+  <p style="font-size:13px;color:rgba(255,255,255,.6);margin-top:12px;">Íconos ilustrativos generados con IA.</p>
+</div></section>
+
+<section id="guia" class="guia"><span class="rub" data-rub="1">Rúbrica 1 · Perfil del guía</span><div class="wrap split">
+  <div class="ph rev"><img src="img/f03.jpg" alt="Juan David Gómez, guía" style="object-position:62% 50%;"><span class="cred">Foto de campo · Juan David en Cocorná</span></div>
+  <div class="rev">
+    <div class="kick">Tu guía</div>
+    <h2>Juan David <em>Gómez</em></h2>
+    <blockquote>«Como el río, también nosotros necesitamos fluir, limpiarnos y volver a empezar.»</blockquote>
+    <p>Durante años viajé y enseñé yoga fuera de Colombia. Aprendí que el cuerpo, que es en gran parte agua, se comporta como un río: si no fluye ni descansa, pierde el equilibrio.</p>
+    <p>Regresé y encontré en Cocorná un territorio que habla ese idioma. Me formé como tecnólogo en Guianza Turística en el SENA para conducir grupos con seguridad y respeto por quienes habitan el lugar.</p>
+    <p>No prometo curas: te ofrezco río, montaña, comida local y la historia verdadera del territorio.</p>
+  </div>
+</div></section>
+
+<section id="condiciones" class="bg-blanco"><span class="rub" data-rub="9">Rúbrica 9 · Modelo de contrato</span><div class="wrap split" style="align-items:start;">
+  <div class="precio rev">
+    <div class="kick" style="color:#BFF2E6;">Valor por persona</div>
+    <div class="v">$450.000</div>
+    <small>COP · valor académico de referencia, grupo de 6 a 10 personas</small>
+    <ul><li>Guía durante los 2 días</li><li>1 noche en posada rural</li><li>Cena, desayuno, almuerzo y refrigerios</li><li>Traslados locales</li><li>Museo, Proyecto Jagua y café con Nanci</li><li>Kit, botiquín y seguro de asistencia</li></ul>
+    <small>No incluye: transporte desde tu ciudad, terapias opcionales (shirodhara y abhyanga, se pagan aparte a la anfitriona) ni gastos personales.</small>
+    <a class="btn sec" href="#reserva-sec" style="margin-top:20px;">Reservar mi cupo</a>
+  </div>
+  <div class="rev">
+    <div class="kick">Condiciones del servicio</div>
+    <h2>Claro desde <em>el principio</em></h2>
+    <p class="lead" style="margin-bottom:10px;">Antes de viajar firmas un contrato sencillo con estas condiciones. Así tú, el guía y los anfitriones estamos protegidos.</p>
+    <div class="acc"><button>Reserva y pago</button><div class="cuerpo"><p>Reservas tu cupo con el 50 % del valor y pagas el 50 % restante tres días antes de la salida. Recibes comprobante y la confirmación por WhatsApp.</p></div></div><div class="acc"><button>Cancelación</button><div class="cuerpo"><p>Si cancelas con más de 7 días de anticipación te devolvemos el 90 %. Entre 3 y 7 días, el 50 %. Con menos de 72 horas no hay devolución, pero puedes ceder tu cupo a otra persona.</p></div></div><div class="acc"><button>Clima y río</button><div class="cuerpo"><p>Si hay alerta de creciente o lluvia fuerte, no entramos al río: cambiamos la actividad por yoga y respiración bajo techo o reprogramamos sin costo.</p></div></div><div class="acc"><button>Tu salud</button><div class="cuerpo"><p>Antes del viaje llenas una declaración de salud (alergias, medicamentos, movilidad). Ninguna práctica es obligatoria. Las actividades de bienestar no reemplazan un tratamiento médico.</p></div></div><div class="acc"><button>Normas del recorrido</button><div class="cuerpo"><p>Seguir las indicaciones del guía, no dejar residuos ni extraer plantas o piedras, no consumir alcohol ni sustancias durante el recorrido y respetar el espacio de cada persona.</p></div></div><div class="acc"><button>Menores de edad</button><div class="cuerpo"><p>Pueden viajar personas desde los 16 años. Los menores de 18 necesitan autorización escrita de sus padres o acudientes y viajan con un adulto responsable. Rechazamos la explotación sexual comercial de niñas, niños y adolescentes (Ley 1336 de 2009).</p></div></div><div class="acc"><button>Seguro de asistencia</button><div class="cuerpo"><p>La tarifa incluye un seguro de asistencia durante el recorrido. Lleva tu carné de salud (EPS) o seguro de viaje: cubre lo que el seguro de asistencia no alcance.</p></div></div><div class="acc"><button>Quejas, reclamos y felicitaciones</button><div class="cuerpo"><p>Durante el recorrido, habla con tu guía: te escucha en privado y busca una solución en el momento. Después, escríbenos por el grupo de WhatsApp o en la encuesta: respondemos por escrito en máximo 5 días hábiles.</p></div></div><div class="acc"><button>Tus datos y tu imagen</button><div class="cuerpo"><p>Usamos tus datos de salud y contacto solo para prestarte el servicio y no los compartimos, salvo lo necesario en una emergencia (Ley 1581 de 2012). Las fotos en las que apareces solo se usan con tu autorización escrita.</p></div></div><div class="acc"><button>Tus garantías</button><div class="cuerpo"><p>El servicio se describe por escrito en el contrato, incluye seguro de asistencia y sigue la norma de guianza NTC 6507. Si tienes una queja, la atendemos y puedes acudir a la Personería municipal.</p></div></div>
+  </div>
+</div></section>
+
+<section id="reserva-sec"><span class="rub" data-rub="7">Rúbrica 7 · Comunicación con el usuario</span><div class="wrap split" style="align-items:start;">
+  <div class="rev">
+    <div class="kick">Reserva</div>
+    <h2>Regálate <em>dos días</em></h2>
+    <p class="lead">Así funciona la inscripción:</p>
+    <div class="sientes">
+      <div><b>1.</b> Llenas el formulario con tus datos y tu estado de salud.</div>
+      <div><b>2.</b> Te confirmamos el cupo y pagas el 50 % para reservar.</div>
+      <div><b>3.</b> Entras al grupo de WhatsApp con las recomendaciones y la hora de encuentro.</div>
+      <div><b>4.</b> Firmas el contrato y ¡nos vemos en Cocorná!</div>
+    </div>
+  </div>
+  <form class="form rev" id="reserva">
+    <label>Nombre completo</label><input required placeholder="Tu nombre">
+    <label>Celular</label><input required placeholder="300 000 0000" inputmode="tel">
+    <label>¿Tienes alguna condición de salud, alergia o limitación de movilidad?</label><textarea rows="2" placeholder="Escribe «ninguna» si no aplica"></textarea>
+    <label>Fecha de interés</label><select><option>Próxima salida disponible</option><option>Quiero que me avisen de nuevas fechas</option></select>
+    <div class="chk"><input type="checkbox" required id="acepto"><label for="acepto" style="margin:0;">Acepto las condiciones del servicio y el tratamiento de mis datos.</label></div>
+    <button class="btn pri" style="margin-top:18px;width:100%;justify-content:center;">Quiero mi cupo</button>
+    <div class="msg" id="msgRes"></div>
+  </form>
+</div></section>
+
+<section id="opinion" class="cocorna"><span class="rub" data-rub="10">Rúbrica 10 · Instrumento de evaluación</span><div class="wrap split" style="align-items:start;">
+  <div class="rev">
+    <div class="kick">Tu opinión</div>
+    <h2>Al final, <em>te escuchamos</em></h2>
+    <p class="lead">En el cierre del Día 2 calificas al guía, tu experiencia y a los anfitriones. Con tus respuestas mejoramos la siguiente salida. Pruébalo aquí:</p>
+  </div>
+  <div class="form rev"><div class="preg"><span>El guía explicó con claridad el plan, los riesgos y las normas</span><div class="estrellas"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div></div><div class="preg"><span>Sentí descanso real y desconexión</span><div class="estrellas"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div></div><div class="preg"><span>La comida, la posada y los traslados cumplieron lo prometido</span><div class="estrellas"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div></div><div class="preg"><span>Recomendaría esta experiencia</span><div class="estrellas"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div></div><p id="prom" style="margin-top:16px;font-size:15px;color:var(--turq);"></p></div>
+</div></section>
+
+<footer id="fuentes" style="position:relative;"><span class="rub" data-rub="11">Rúbrica 11 · Presentación y bibliografía</span><div class="wrap">
+  <div class="cols">
+    <div><h4>Reconecta con tu Esencia</h4>
+      <p>Servicio de guianza de bienestar en Cocorná, Antioquia. Proyecto académico de Juan David Gómez Albornoz · Tecnología en Guianza Turística · SENA CIAA · Ficha 3521255 · Instructor Rubén Gallo · 2026.</p>
+      <p style="margin-top:12px;">Las imágenes marcadas «Foto de campo» fueron tomadas en Cocorná. Las marcadas «Imagen ilustrativa · IA» son de referencia. Precio y reserva con fines académicos.</p></div>
+    <div><h4>Fuentes</h4><ol><li>Alcaldía de Cocorná. (2024). <i>Plan de Desarrollo Municipal 2024-2027 «Cocorná Dulce Aventura»</i>. Alcaldía de Cocorná.</li><li>Congreso de Colombia. (1996). <i>Ley 300 de 1996, por la cual se expide la Ley General de Turismo</i>. Diario Oficial.</li><li>Congreso de Colombia. (2009). <i>Ley 1336 de 2009, contra la explotación sexual comercial de niños, niñas y adolescentes en el turismo</i>. Diario Oficial.</li><li>Congreso de Colombia. (2012). <i>Ley 1558 de 2012, por la cual se modifica la Ley 300 de 1996, Ley General de Turismo</i>. Diario Oficial.</li><li>Congreso de Colombia. (2012). <i>Ley Estatutaria 1581 de 2012, disposiciones generales para la protección de datos personales</i>. Diario Oficial.</li><li>Congreso de Colombia. (2013). <i>Ley Estatutaria 1618 de 2013, derechos de las personas con discapacidad</i>. Diario Oficial.</li><li>Congreso de Colombia. (2020). <i>Ley 2068 de 2020, por la cual se modifica la Ley General de Turismo</i>. Diario Oficial.</li><li>CORNARE. (2015). <i>Acuerdo 331 de 2015: Distrito Regional de Manejo Integrado Sistema Viahó–Guayabal</i>. Corporación Autónoma Regional de las Cuencas de los Ríos Negro y Nare.</li><li>CORNARE. (2024). <i>Gestión del riesgo e información hidrometeorológica, municipio de Cocorná</i>. CORNARE.</li><li>Gallo, R. (2026). <i>Contratos del servicio de guianza turística: ejemplo</i> [Material de formación]. SENA, Centro de la Innovación, la Agroindustria y la Aviación.</li><li>ICONTEC. (2021). <i>NTC 6507: Requisitos para la prestación del servicio de guionaje (guianza) turístico</i>. ICONTEC.</li><li>Ministerio de Comercio, Industria y Turismo. (s. f.). <i>Guía de implementación de la Norma Técnica Colombiana NTC 6507: Servicios de guianza turística</i>. MinCIT.</li><li>Ministerio de Comercio, Industria y Turismo. (s. f.). <i>NTS-GT 005: Conducción de grupos en recorridos ecoturísticos</i>. MinCIT.</li><li>Presidencia de la República de Colombia. (2015). <i>Decreto 1074 de 2015, Decreto Único Reglamentario del Sector Comercio, Industria y Turismo</i>. Diario Oficial.</li><li>Restrepo Montoya, T. P. (2025). <i>El servicio de guianza turística</i> [Material de formación]. SENA, Centro de la Innovación, la Agroindustria y la Aviación.</li><li>SENA. (2026). <i>Guías de las sesiones 1 a 4: Conducir usuarios de acuerdo con tipo de recorrido turístico y normativa</i> [Material de formación]. Centro de la Innovación, la Agroindustria y la Aviación.</li></ol></div>
+  </div>
+  <div class="base"><span>© 2026 · Evidencia 01 · Conducir usuarios de acuerdo con tipo de recorrido turístico y normativa</span><span>Documento técnico de la evidencia: entregado en PDF en Sayuna</span></div>
+</div></footer>
+
+<button id="profBtn">🎓 Modo profesor: ver rúbrica</button>
+<div id="panel"><h4>Los 11 puntos en esta web</h4><p>Cada sección marcada en dorado responde a un criterio de la rúbrica. Toca uno para ir a él.</p><a href="#guia"><b>1</b>Perfil del guía</a><a href="#cocorna"><b>2</b>Descripción del territorio</a><a href="#experiencia"><b>3</b>Actividades y experiencias</a><a href="#llevar"><b>4</b>Equipos, indumentaria y recursos</a><a href="#seguridad"><b>5</b>Circunstancias</a><a href="#seguridad"><b>6</b>Grupos de apoyo</a><a href="#cronograma"><b>7</b>Itinerario y recomendaciones por momentos</a><a href="#para-ti"><b>8</b>Perfil del cliente</a><a href="#condiciones"><b>9</b>Modelo de contrato</a><a href="#opinion"><b>10</b>Instrumento de evaluación</a><a href="#fuentes"><b>11</b>Presentación y bibliografía</a>
+<p class="doc" style="margin-top:10px;background:var(--menta);border-radius:10px;padding:8px 10px;">El documento técnico (logística interna) se entrega en PDF en Sayuna.</p></div><script>
+const nav=document.querySelector('nav.top');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40));
+document.getElementById('menuBtn').onclick=()=>document.querySelector('.links').classList.toggle('abierto');
+document.querySelectorAll('.links a').forEach(a=>a.onclick=()=>document.querySelector('.links').classList.remove('abierto'));
+
+// cronograma: pestañas y visor de imagen
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.dia').forEach(d=>d.classList.toggle('on',d.id===b.dataset.dia)); });
+document.querySelectorAll('.dia').forEach(d=>{
+  const v=d.querySelector('.visor img'), cap=d.querySelector('.visor .cap'), cr=d.querySelector('.visor .cred');
+  d.querySelectorAll('.paso').forEach(p=>p.addEventListener('click',()=>{
+    d.querySelectorAll('.paso').forEach(x=>x.classList.toggle('on',x===p));
+    if(p.dataset.img){ v.style.opacity=0; setTimeout(()=>{ v.src=p.dataset.img; v.style.opacity=1; },180); cr.style.display=''; }
+    cap.textContent=p.querySelector('.h').textContent+' · '+p.querySelector('h4').textContent; })); });
+
+// qué llevar: progreso (se recuerda en este navegador)
+const cks=[...document.querySelectorAll('.grupo input')];
+function prog(){ const n=cks.filter(c=>c.checked).length; document.querySelector('.barra div').style.width=(n/cks.length*100)+'%';
+  document.getElementById('cuenta').textContent=`${n} de ${cks.length} listos`;
+  cks.forEach(c=>c.parentElement.classList.toggle('ok',c.checked));
+  try{ localStorage.setItem('reconecta-llevar-v2',JSON.stringify(cks.map(c=>c.checked))); }catch(e){} }
+try{ const g=JSON.parse(localStorage.getItem('reconecta-llevar-v2')||'[]'); cks.forEach((c,i)=>c.checked=!!g[i]); }catch(e){}
+cks.forEach(c=>c.onchange=prog); prog();
+
+// puntos rotulados en la foto de la mochila
+let pinTip=null;
+function quitarPin(){ if(pinTip){pinTip.remove(); pinTip=null;} document.querySelectorAll('.pin.on').forEach(p=>p.classList.remove('on')); }
+document.querySelectorAll('.pin').forEach(p=>{
+  const ver=()=>{ quitarPin(); p.classList.add('on'); pinTip=document.createElement('div'); pinTip.className='pin-tip'; pinTip.textContent=p.dataset.tip;
+    const x=parseFloat(p.style.left); pinTip.style.left=Math.min(Math.max(x,18),82)+'%'; pinTip.style.top=p.style.top; p.parentElement.appendChild(pinTip); };
+  p.addEventListener('mouseenter',ver); p.addEventListener('focus',ver); p.addEventListener('mouseleave',quitarPin); p.addEventListener('blur',quitarPin);
+  p.addEventListener('click',e=>{ e.stopPropagation(); ver(); }); });
+document.addEventListener('click',quitarPin);
+
+// condiciones: acordeón
+document.querySelectorAll('.acc button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('on'));
+
+// reserva (demostración: no envía datos)
+document.getElementById('reserva').onsubmit=e=>{ e.preventDefault(); const m=document.getElementById('msgRes');
+  m.style.display='block'; m.textContent='¡Gracias! En la operación real este formulario se conecta al Google Form de inscripción y luego recibes la confirmación y el enlace al grupo de WhatsApp. (Demostración académica: no se enviaron datos.)'; };
+
+// opinión: estrellas
+document.querySelectorAll('.estrellas').forEach(g=>{ const s=[...g.children];
+  s.forEach((x,i)=>x.onclick=()=>{ s.forEach((y,j)=>y.classList.toggle('on',j<=i)); g.dataset.v=i+1; resumen(); }); });
+function resumen(){ const v=[...document.querySelectorAll('.estrellas')].map(g=>+g.dataset.v||0).filter(Boolean);
+  const r=document.getElementById('prom'); if(!v.length) return; const m=v.reduce((a,b)=>a+b,0)/v.length;
+  r.textContent=`Tu promedio: ${m.toFixed(1)} de 5`+(m<4?' · Usaremos tu respuesta para mejorar la próxima salida.':' · ¡Gracias por recomendarnos!'); }
+
+// modo profesor
+document.getElementById('profBtn').onclick=()=>{ const on=document.body.classList.toggle('prof');
+  document.getElementById('profBtn').textContent=on?'✕ Cerrar modo profesor':'🎓 Modo profesor: ver rúbrica'; };
+
+// aparición al hacer scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll('.rev').forEach(x=>io.observe(x));
+</script></body></html>
