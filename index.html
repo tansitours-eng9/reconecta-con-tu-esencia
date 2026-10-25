@@ -209,6 +209,7 @@ body.prof #panel { display: block; }
 #panel a:hover { background: var(--menta2); }
 #panel a b { background: var(--turq); color: #fff; border-radius: 50%; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex: none; }
 #panel .doc { display: block; margin-top: 10px; background: var(--menta); text-align: center; font-weight: 500; }
+#panel .prof-nota { background: var(--menta2); border-left: 3px solid var(--sol); padding: 8px 10px; border-radius: 8px; margin-bottom: 12px; font-size: 12px; line-height: 1.45; }
 
 .rev { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
 .rev.vis { opacity: 1; transform: none; }
@@ -465,7 +466,9 @@ body.prof #panel { display: block; }
 </div></footer>
 
 <button id="profBtn">🎓 Modo profesor: ver rúbrica</button>
-<div id="panel"><h4>Los 11 puntos en esta web</h4><p>Cada sección marcada en dorado responde a un criterio de la rúbrica. Toca uno para ir a él.</p><a href="#guia"><b>1</b>Perfil del guía</a><a href="#cocorna"><b>2</b>Descripción del territorio</a><a href="#experiencia"><b>3</b>Actividades y experiencias</a><a href="#llevar"><b>4</b>Equipos, indumentaria y recursos</a><a href="#seguridad"><b>5</b>Circunstancias</a><a href="#seguridad"><b>6</b>Grupos de apoyo</a><a href="#cronograma"><b>7</b>Itinerario y recomendaciones por momentos</a><a href="#para-ti"><b>8</b>Perfil del cliente</a><a href="#condiciones"><b>9</b>Modelo de contrato</a><a href="#opinion"><b>10</b>Instrumento de evaluación</a><a href="#fuentes"><b>11</b>Presentación y bibliografía</a>
+<div id="panel"><h4>Los 11 puntos en esta web</h4>
+<p class="prof-nota"><b>Imágenes con IA.</b> Varias fotografías de esta evidencia (catálogo web y documento PDF) fueron generadas con inteligencia artificial como boceto visual del servicio: recrean escenas como el kit del guía, la hidroterapia, el café literario o la lista de viaje antes de operar el tour en Cocorná. La intención académica es mostrar el diseño del producto; cuando el recorrido se ejecute de verdad, o en evidencias futuras, se podrán reemplazar por fotografías reales. Las tomadas en territorio se identifican como «Foto de campo».</p>
+<p>Cada sección marcada en dorado responde a un criterio de la rúbrica. Toca uno para ir a él.</p><a href="#guia"><b>1</b>Perfil del guía</a><a href="#cocorna"><b>2</b>Descripción del territorio</a><a href="#experiencia"><b>3</b>Actividades y experiencias</a><a href="#llevar"><b>4</b>Equipos, indumentaria y recursos</a><a href="#seguridad"><b>5</b>Circunstancias</a><a href="#seguridad"><b>6</b>Grupos de apoyo</a><a href="#cronograma"><b>7</b>Itinerario y recomendaciones por momentos</a><a href="#para-ti"><b>8</b>Perfil del cliente</a><a href="#condiciones"><b>9</b>Modelo de contrato</a><a href="#opinion"><b>10</b>Instrumento de evaluación</a><a href="#fuentes"><b>11</b>Presentación y bibliografía</a>
 <p class="doc" style="margin-top:10px;background:var(--menta);border-radius:10px;padding:8px 10px;">El documento técnico (logística interna) se entrega en PDF en Sayuna.</p></div><script>
 const nav=document.querySelector('nav.top');
 addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40));
